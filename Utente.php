@@ -2,11 +2,14 @@
 
 class Utente{
     public $sconto = 0;
-
+    public $nome = 'Straniero';
     public $saldo = 0;
+    public $welcome = 'Benvenuto Straniero';
+    public $prodottiScelti = [];
     
-    protected $prodottiScelti = [];
-    
+    public function welcome(){
+        return "Benvenuto $this->nome";
+    }
     public function aggiungiProdotto($prodotto) {
         $this->prodottiScelti[] = $prodotto;
     }
