@@ -31,12 +31,11 @@ class Utente{
     }
     public function effettuaPagamento() {
         $totaleDaPagare = $this->calcolaPrezzoTotale();
-        var_dump($totaleDaPagare);
-    
+        
         if($this->saldo < $totaleDaPagare) {
-            die('Saldo non disponibile');
+            throw new Exception('Saldo non disponibile');
         } else {
-            return 'ok';
+            return 'Pagamento andato a buon fine';
         }
     }
 }

@@ -20,15 +20,19 @@ var_dump($catalogo);
 // Creo dei nuovi utenti
 $anonimo = new Utente();
 $anonimo->aggiungiProdotto($crocchetteDelux);
+$anonimo->saldo = 3000;
 var_dump($anonimo);
 
 $carlo = new UtentePremium ('Carlo', 'carlo@email.it');
 $carlo->aggiungiProdotto($cucciaDomus);
 $carlo->aggiungiProdotto($tappetiniSuper);
+
 var_dump($carlo);
 
 
 $listaUtenti = array($anonimo, $carlo);
+
+
 
 ?>
 
@@ -55,6 +59,7 @@ $listaUtenti = array($anonimo, $carlo);
         <?php foreach($listaUtenti as $user) {?>
             <div>
             <h3><?php echo($user->welcome());?></h3>
+            <h5>Esito: <?php echo($user->effettuaPagamento());?></h5>
             <?foreach($user->prodottiScelti as $prodotto){?>
             <h5><?php echo($prodotto->getBasicInfo()) ?></h5>
             <?php }?>

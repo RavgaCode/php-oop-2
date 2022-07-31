@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__.'/ProdottoCane.php';
+require_once __DIR__. '/Fornitore.php';
 
 class Tappetini extends ProdottoCane{
+    use Fornitore;
+
     public $categoria = 'Accessori';
     public $pezzi;
 
