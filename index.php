@@ -68,7 +68,7 @@ $listaUtenti = array($anonimo, $carlo);
             <div>
             <h3><?php echo($user->welcome());?></h3>
             <h5>Esito: <?php echo($user->effettuaPagamento());?></h5>
-            <?foreach($user->prodottiScelti as $prodotto){?>
+            <?php foreach($user->prodottiScelti as $prodotto){?>
             <h5><?php echo($prodotto->getBasicInfo()) ?></h5>
             <?php }?>
             </div>
