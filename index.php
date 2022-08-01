@@ -27,6 +27,14 @@ $carlo = new UtentePremium ('Carlo', 'carlo@email.it');
 $carlo->aggiungiProdotto($cucciaDomus);
 $carlo->aggiungiProdotto($tappetiniSuper);
 
+
+try{
+    if ($carlo->effettuaPagamento() ==="Pagamento andato a buon fine"){
+        "Pagamento andato a buon fine";
+    }
+} catch (Exception $e){
+     echo("Saldo non disponibile");
+}
 var_dump($carlo);
 
 

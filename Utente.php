@@ -33,7 +33,7 @@ class Utente{
         $totaleDaPagare = $this->calcolaPrezzoTotale();
         
         if($this->saldo < $totaleDaPagare) {
-            throw new Exception('Saldo non disponibile');
+            throw new Exception("Utente: $this->nome: Saldo non disponibile");
         } else {
             return 'Pagamento andato a buon fine';
         }
