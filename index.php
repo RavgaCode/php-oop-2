@@ -67,7 +67,16 @@ $listaUtenti = array($anonimo, $carlo);
         <?php foreach($listaUtenti as $user) {?>
             <div>
             <h3><?php echo($user->welcome());?></h3>
-            <h5>Esito: <?php echo($user->effettuaPagamento());?></h5>
+            <h5>Esito: <?php try {
+                        if ($carlo->effettuaPagamento() === "Pagamento andato a buon fine") {
+                            echo "Pagamento andato a buon fine";
+                        }
+                    } catch (Exception $e) {
+                        echo ("Saldo non disponibile");
+                    } ?>
+                    <?php echo ($user->effettuaPagamento());
+                    ?>
+                    </h5>
             <?php foreach($user->prodottiScelti as $prodotto){?>
             <h5><?php echo($prodotto->getBasicInfo()) ?></h5>
             <?php }?>
